@@ -157,6 +157,9 @@ video {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  overflow-y: auto; /* Enable vertical scrollbar */
+  max-height: 500px; /* Set a maximum height for the video grid */
+  scroll-behavior: smooth; /* Add smooth scrolling behavior */
 }
 
 #showChat {
@@ -269,4 +272,95 @@ messages {
     margin-right: 0; /* Remove margin for input */
     margin-bottom: 10px; /* Add space below input */
   }
+}
+
+
+/* Responsiveness  */
+/* Ensure the chat window has a maximum height and is scrollable */
+.main__chat_window {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable vertical scrolling for overflowing content */
+  max-height: 300px; /* Limit chat window height on smaller screens */
+}
+
+/* Hide the default browser scrollbar */
+.main__chat_window::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Style the scrollbar track (the background) */
+.main__chat_window::-webkit-scrollbar-track {
+  background-color: transparent; /* Make the scrollbar track transparent */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.main__chat_window::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Round the edges of the thumb */
+}
+
+/* Style the scrollbar thumb when hovering over it */
+.main__chat_window::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Hover color of the scrollbar thumb */
+}
+
+
+/* Apply styles for screens up to 768px (tablets) */
+@media (max-width: 768px) {
+  .main__left {
+    flex: 1; /* Take up full width on smaller screens */
+  }
+
+  .videos__group {
+    justify-content: space-around; /* Adjust video spacing */
+    align-items: center;
+    flex-wrap: wrap; /* Allow videos to wrap to the next line */
+  }
+
+  video {
+    width: 100%; /* Make videos full-width on smaller screens */
+    max-width: 300px; /* Limit video width */
+  }
+
+  .options {
+    flex-direction: column; /* Stack options vertically */
+    align-items: center;
+  }
+
+  .options__left, .options__right {
+    margin: 0; /* Remove margin */
+  }
+}
+
+/* Apply styles for screens up to 480px (mobiles) */
+@media (max-width: 480px) {
+  .main__left, .main__right {
+    width: 100%; /* Take up full width on mobile screens */
+  }
+
+  .options__button {
+    width: 40px; /* Adjust button size for small screens */
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .main__message_container > input {
+    flex: 1; /* Take up remaining width */
+    margin-right: 0; /* Remove margin */
+  }
+
+  .main__message_container > #send {
+    width: 40px; /* Adjust button size for small screens */
+    height: 40px;
+  }
+
+  .main__chat_window {
+    max-height: none; /* Allow chat window to expand */
+  }
+
+  .header__back {
+    display: block; /* Show back button */
+  }
+
+  /* Additional styles as needed for mobile screens */
 }
