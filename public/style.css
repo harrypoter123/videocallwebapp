@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
@@ -77,10 +78,10 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
+  background-color:var(--main-light);
   height: 50px;
   border-radius: 5px;
-  color: var(--main-light);
+  color: black;
   font-size: 1.2rem;
   width: 50px;
   margin: 0 0.5rem;
@@ -108,6 +109,7 @@ video {
 }
 
 .main__message_container {
+  margin-top:22rem;
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -157,9 +159,6 @@ video {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  overflow-y: auto; /* Enable vertical scrollbar */
-  max-height: 500px; /* Set a maximum height for the video grid */
-  scroll-behavior: smooth; /* Add smooth scrolling behavior */
 }
 
 #showChat {
@@ -251,7 +250,9 @@ messages {
 
 /* Style the send button */
 #send {
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
+  background-color: var(--main-light);
+  color: black;
   height: 40px;
   width: 40px;
   border-radius: 50%;
@@ -323,7 +324,7 @@ messages {
   }
 
   .options {
-    flex-direction: column; /* Stack options vertically */
+    flex-direction: row; /* Stack options vertically */
     align-items: center;
   }
 

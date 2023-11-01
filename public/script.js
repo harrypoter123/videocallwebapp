@@ -143,3 +143,41 @@ socket.on("createMessage", (message, userName) => {
         <span>${message}</span>
     </div>`;
 });
+
+
+// for leave the meeting 
+
+// for leave the meeting 
+
+
+// leaveButton.addEventListener("click", () => {
+//   // Close the peer connection
+ 
+// });
+
+
+// for leave the meeting 
+
+const leaveButton = document.querySelector("#leaveButton");
+
+leaveButton.addEventListener("click", () => {
+  // Close the peer connection
+  peer.disconnect();
+  
+  // Remove your video stream from the grid
+  myVideoStream.getTracks().forEach((track) => {
+    track.stop();
+  });
+  myVideo.remove();
+  
+  // Inform the server that you're leaving the room
+  socket.emit("user-disconnected", ROOM_ID, user);
+
+  // Remove the video grid
+  videoGrid.innerHTML ="";
+
+  // Redirect the user to the homepage or another suitable page
+  window.location.href = "/";
+
+});
+
